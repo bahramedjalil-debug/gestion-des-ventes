@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import dj_database_url
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,7 +92,9 @@ REST_FRAMEWORK = {
 
 
 DATABASES = {
-    "default": dj_database_url.parse("YOUR_DATABASE_URL_HERE")
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+    )
 }
 
 
