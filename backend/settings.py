@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-5w9%$nu#(5^fubk(%-*m$vh$_#@^kzrfc70ujofvc=joo+^n6z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://gestion-des-ventes-hvcb.onrender.com/"]
 
 
 # Application definition
@@ -134,6 +133,9 @@ USE_TZ = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = 'api.User'
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [ "gestion-des-ventes-hvcb.onrender.com",
+    "127.0.0.1",
+    "localhost"]
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
